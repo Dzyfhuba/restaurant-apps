@@ -1,0 +1,25 @@
+header {
+    height: 50px;
+    padding: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    nav {
+        height: inherit;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        a.brand {
+            height: inherit;
+            width: inherit;
+            img {
+                height: 100%;
+                width: auto;
+            }
+        }
+        >ul {
+            list-style: none;
+            >li {
+                display: inline;
+            }
+        }
+    }
+}

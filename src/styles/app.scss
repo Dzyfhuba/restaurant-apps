@@ -1,19 +1,6 @@
+@import './pallete.scss';
 body {
     margin: 0;
-    header {
-        height: 50px;
-        padding: 16px;
-        nav {
-            height: inherit;
-            display: flex;
-            a.brand {
-                height: inherit;
-                width: inherit;
-                img {
-                    height: 100%;
-                    width: auto;
-                }
-            }
-        }
-    }
+    background-color: $color-1;
+    @import './header.scss';
 }
