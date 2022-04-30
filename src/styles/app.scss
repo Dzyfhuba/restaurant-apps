@@ -1,0 +1,19 @@
+body {
+    margin: 0;
+    header {
+        height: 50px;
+        padding: 16px;
+        nav {
+            height: inherit;
+            display: flex;
+            a.brand {
+                height: inherit;
+                width: inherit;
+                img {
+                    height: 100%;
+                    width: auto;
+                }
+            }
+        }
+    }
+}
