@@ -1,6 +1,10 @@
 @import './pallete.scss';
+@import './media_query.scss';
 body {
     margin: 0;
     background-color: $color-1;
+    color: $color-4;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     @import './header.scss';
+    @import './head.scss';
 }
