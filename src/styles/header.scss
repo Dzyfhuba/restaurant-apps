@@ -2,7 +2,7 @@ header {
     height: 10vh;
     position: fixed;
     top: 0;
-    width: 100%;
+    width: 100vw;
     transition: top 0.3s;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     text-transform: uppercase;
@@ -19,7 +19,6 @@ header {
             margin: 0;
         }
         a.brand {
-            // padding: 16px;
             height: 90%;
             width: inherit;
             img {
