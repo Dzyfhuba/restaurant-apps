@@ -1,0 +1,68 @@
+{
+    "restaurants": [
+      {
+        "id": "6c7bqjgi84kcowlqdz",
+        "menu": [
+          "Fried Rice", "Omelette", "Noodles", "Fried Chicked", "Yakisoba", "Onigiri", "Kebab"
+        ],
+        "address": "Jl. Raya Cibaduyut No.1, Cibaduyut, Kec. Cibaduyut, Kota Bandung, Jawa Barat 40292"
+      },
+      {
+        "id": "ljx8i0qu2uckcowlqdz",
+        "menu": [
+          "Fried Rice", "Omelette", "Noodles", "Fried Chicked", "Yakisoba", "Onigiri", "Kebab"
+        ],
+        "address": "Jl. Raya Cibaduyut No.1, Cibaduyut, Kec. Cibaduyut, Kota Bandung, Jawa Barat 40292"
+      },
+      {
+        "id": "fe8bbxoazddkcowlqdz",
+        "menu": [
+          "Fried Rice", "Omelette", "Noodles", "Fried Chicked", "Yakisoba", "Onigiri", "Kebab"
+        ],
+        "address": "Jl. Raya Cibaduyut No.1, Cibaduyut, Kec. Cibaduyut, Kota Bandung, Jawa Barat 40292"
+      },
+      {
+        "id": "ik1zljmlf68kcowlqdz",
+        "menu": [
+          "Fried Rice", "Omelette", "Noodles", "Fried Chicked", "Yakisoba", "Onigiri", "Kebab"
+        ],
+        "address": "Jl. Raya Cibaduyut No.1, Cibaduyut, Kec. Cibaduyut, Kota Bandung, Jawa Barat 40292"
+      },
+      {
+        "id": "9jpuzkm6n6jkcowlqdz",
+        "menu": [
+          "Fried Rice", "Omelette", "Noodles", "Fried Chicked", "Yakisoba", "Onigiri", "Kebab"
+        ],
+        "address": "Jl. Raya Cibaduyut No.1, Cibaduyut, Kec. Cibaduyut, Kota Bandung, Jawa Barat 40292"
+      },
+      {
+        "id": "cpl5jpsnuqkkcowlqdz",
+        "menu": [
+          "Fried Rice", "Omelette", "Noodles", "Fried Chicked", "Yakisoba", "Onigiri", "Kebab"
+        ],
+        "address": "Jl. Raya Cibaduyut No.1, Cibaduyut, Kec. Cibaduyut, Kota Bandung, Jawa Barat 40292"
+      },
+      {
+        "id": "iqtf9hmdzvbkcowlqdz",
+        "menu": [
+          "Fried Rice", "Omelette", "Noodles", "Fried Chicked", "Yakisoba", "Onigiri", "Kebab"
+        ],
+        "address": "Jl. Raya Cibaduyut No.1, Cibaduyut, Kec. Cibaduyut, Kota Bandung, Jawa Barat 40292"
+      },
+      {
+        "id": "8i06gqcc2dpkcowlqdz",
+        "menu": [
+          "Fried Rice", "Omelette", "Noodles", "Fried Chicked", "Yakisoba", "Onigiri", "Kebab"
+        ],
+        "address": "Jl. Raya Cibaduyut No.1, Cibaduyut, Kec. Cibaduyut, Kota Bandung, Jawa Barat 40292"
+      },
+      {
+        "id": "wf5o19xhxxkcowlqdz",
+        "menu": [
+          "Fried Rice", "Omelette", "Noodles", "Fried Chicked", "Yakisoba", "Onigiri", "Kebab"
+        ],
+        "address": "Jl. Raya Cibaduyut No.1, Cibaduyut, Kec. Cibaduyut, Kota Bandung, Jawa Barat 40292"
+      }
+    ]
+  }
+  

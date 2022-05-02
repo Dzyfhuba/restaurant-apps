@@ -23,6 +23,31 @@
             display: flex;
             justify-content: space-between;
         }
+        .modal-body {
+            display: flex;
+            justify-content: space-between;
+            table {
+                width: 100%;
+                tr {
+                    td {
+                        padding: 10px;
+                        vertical-align: top;
+                        ul {
+                            padding-left: 16px;
+                        }
+                    }
+                }
+            }
+        }
+        .img-thumbnail {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 200px;
+            width: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
     }
     .close {
         color: #aaaaaa;
