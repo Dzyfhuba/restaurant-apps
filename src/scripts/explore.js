@@ -17,8 +17,18 @@ list.innerHTML = data['restaurants'].map(item => {
                 <p class="description">
                 ${item.description}
                 </p>
-                <div class="right"><button type="button" class="btn-detail">Detail Lainnya</button></div>
+                <div class="right"><button type="button" class="btn-detail" modal-target="${item.id}">Detail Lainnya</button></div>
             </div>
+        </article>
+    </div>
+    <div class="modal" id="${item.id}">
+        <article class="modal-content">
+            <header class="modal-header">
+                <h1>${item.name} | Detail</h1>
+                <span class="close">&times;</span>
+            </header>
+            Alamat      : adjasjkdbasd
+            Menu utama  : asdad
         </article>
     </div>
     `;
