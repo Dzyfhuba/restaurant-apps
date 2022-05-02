@@ -1,12 +1,10 @@
 .explore {
-    // height: a;
     text-align: center;
     >.title {
         padding-top: 32px;
     }
     >.list {
         position: relative;
-        border: 1px solid white;
         display: grid;
         grid-auto-flow: column;
         grid-auto-columns: 25%;
@@ -14,6 +12,11 @@
         overflow-x: auto;
         scroll-snap-type: x mandatory;
         padding: 0 16px;
+        &::-webkit-scrollbar {
+            @include lg-screen {
+                display: none;
+            }
+        }
         @include lg-screen {
             grid-auto-columns: 33%;
         }
@@ -51,6 +54,9 @@
                         font-size: x-large;
                         margin-bottom: 12px;
                     }
+                    .right {
+                        text-align: right;
+                    }
                 }
                 .city {
                     position: absolute;
@@ -65,6 +71,16 @@
                     font-weight: bold;
                 }
             }
+        }
+    }
+    .btn-detail {
+        background-color: $color-3;
+        padding: 8px;
+        border: none;
+        font-weight: bolder;
+        &:hover {
+            background-color: $color-4;
+            color: $color-2;
         }
     }
 }

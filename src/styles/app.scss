@@ -5,7 +5,8 @@ body {
     background-color: $color-1;
     color: $color-4;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    @import './header.scss';
+    @import './nav.scss';
     @import './head.scss';
     @import './explore.scss';
+    @import './footer.scss';
 }

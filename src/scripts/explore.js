@@ -8,15 +8,16 @@ list.innerHTML = data['restaurants'].map(item => {
     <div class="wrapper">
         <article class="card">
             <span class="city">City</span>
-            <img src="${item.pictureId}" alt="">
+            <img src="${item.pictureId}" alt="${item.name}">
             <div class="content">
                 <span class="rating">Rating: ${item.rating}</span>
                 <header>
-                    <h1>${item.name}</h1>
+                <h1>${item.name}</h1>
                 </header>
                 <p class="description">
-                    ${item.description}
+                ${item.description}
                 </p>
+                <div class="right"><button type="button" class="btn-detail">Detail Lainnya</button></div>
             </div>
         </article>
     </div>

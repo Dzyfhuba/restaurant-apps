@@ -11,13 +11,28 @@ nav {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    z-index: 99;
     a.brand {
         height: 90%;
         margin-left: 16px;
         width: inherit;
-        img {
-            height: inherit;
-            object-fit: cover;
+        text-decoration: none;
+        color: $color-4;
+        // align middle
+        display: flex;
+        align-items: center;
+        font-size: 4em;
+        font-weight: bolder;
+        span {
+            &:nth-child(1) {
+                color: orange;
+            }
+            &:nth-child(2) {
+                color: $color-4;
+            }
+            &:nth-child(3) {
+                color: orange;
+            }
         }
     }
     >ul {
