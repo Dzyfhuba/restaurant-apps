@@ -1,0 +1,11 @@
+.helper {
+    position: fixed;
+    top: -100%;
+    left: 0;
+    background-color: #bf1722;
+    color: white;
+    padding: 8px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+}
