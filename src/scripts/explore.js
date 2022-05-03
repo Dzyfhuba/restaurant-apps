@@ -16,7 +16,7 @@ list.innerHTML = data_detail.map(item =>{
     const menu = item.menu.map(d => `<li>${d}</li>`).join('');
     return `
         <div class="wrapper">
-            <article class="card">
+            <article class="card" tabindex="0">
                 <span class="city">${item.city}</span>
                 <img src="${item.pictureId}" alt="${item.name}">
                 <div class="content">
@@ -33,7 +33,7 @@ list.innerHTML = data_detail.map(item =>{
             </article>
         </div>
         <div class="modal" id="${item.id}">
-            <div class="visually-hidden" tabindex="0">
+            <div class="helper" tabindex="0">
                 Modal has been opened. Press escape to close.
             </div>
             <article class="modal-content">
@@ -58,9 +58,9 @@ list.innerHTML = data_detail.map(item =>{
                     </table>
                 </div>
             </article>
-            <div class="visually-hidden close" tabindex="0">
+            <button class="helper close" tabindex="0">
                 Press enter at this point or press escape to close modal.
-            </div>
+            </button>
         </div>
         <a href="#skipContent" class="helper">Press enter to back to main helper or press tab to the next card</a>
         `;

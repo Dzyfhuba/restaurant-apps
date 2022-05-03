@@ -11,12 +11,11 @@
 <body>
     <section id="skipContent" class="helper" tabindex="0">
         <h1>
-            This is a helper if you are using a screen reader.
+            This is a helper if you are using a screen reader. Press tab to go to navigation of helper.
         </h1>
-        <a href="#mainContent">Skip to main content</a>
-        <a href="#nav">Skip to navigation</a>
         <a href="#head">Skip to head or the jumbotron</a>
-        <a href="#explore">Skip to explore section</a>
+        <a href="#nav">Skip to navigation</a>
+        <a href="#mainContent">Skip to main content</a>
         <a href="#footer">Skip to footer</a>
         <a href="#skipContent">Repeat this helper</a>
     </section>
@@ -31,7 +30,12 @@
                 <a href="https://hafidzubaidillah.com" target="_blank">About Us</a>
             </li>
         </ul>
-        <a href="#skipContent" class="helper">Back to main helper</a>
+        <label id="nav-toggle">
+            <input type="checkbox" id="toggle">
+            <span class="menu">
+                <span class="hamb"></span>
+            </span>
+        </label>
     </nav>
     <section id="head">
         <div class="jumbotron">
@@ -45,6 +49,7 @@
             </div>
             <img src="./images/heros/hero-image_2.jpg" alt="Portal of Foods" class="head-image">
         </div>
+        <a href="#skipContent" class="helper">Press enter to main helper or next to the main content</a>
     </section>
     <main id="mainContent">
         <section id="explore" class="explore">
@@ -52,7 +57,7 @@
             <div class="list"></div>
         </section>
     </main>
-    <footer id="footer">
+    <footer id="footer" tabindex="0">
         <p>Copyright © - Portal of Foods</p>
     </footer>
 </body>

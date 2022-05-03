@@ -1,4 +1,3 @@
-
 const btn_toggle = document.querySelectorAll('button[modal-target]');
 btn_toggle.forEach(e => {
     e.addEventListener('click', () => {
@@ -13,11 +12,6 @@ close.forEach(e => {
     let modal = e.parentNode.closest('.modal');
     e.addEventListener('click', () => {
         modal.style.display = 'none';
-    });
-    e.addEventListener('keydown', (e)=>{
-        if (e.key == 'Enter') {
-            modal.style.display = 'none';
-        }
     });
 });
 
@@ -41,7 +35,7 @@ window.addEventListener('keydown', (e) => {
 });
 
 // if focus is not in modal,  close modal
-window.addEventListener('focus', (e) => {
+window.addEventListener('focus', () => {
     const modal = document.querySelectorAll('.modal');
     modal.forEach(e => {
         if (e.style.display === 'block') {

@@ -37,6 +37,7 @@
     "webpack-merge": "^5.8.0"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.1.1",
     "regenerator-runtime": "^0.13.5",
     "webpack-copy": "^0.2.0"
   }
