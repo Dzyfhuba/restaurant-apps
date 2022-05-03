@@ -1,5 +1,6 @@
 const { merge } = require('webpack-merge');
 const common = require('./webpack.common');
+const webpackStrip = require('strip-loader');
 
 module.exports = merge(common, {
     mode: 'production',
@@ -17,6 +18,10 @@ module.exports = merge(common, {
                     },
                 ],
             },
+            {
+                test: /\.js$/,
+                loader: webpackStrip.loader('console.log')
+            }
         ],
     },
 });
