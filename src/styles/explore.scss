@@ -75,9 +75,11 @@
     }
     .btn-detail {
         background-color: $color-3;
-        padding: 8px;
+        padding: 16px;
         border: none;
         font-weight: bolder;
+        min-height: 44px;
+        min-width: 44px;
         &:hover {
             background-color: $color-4;
             color: $color-2;
