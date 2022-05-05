@@ -6,6 +6,7 @@ section#head {
     transition: padding 1s;
     @include sm-screen {
         height: 100vh;
+        max-height: fit-content;
     }
     >.jumbotron {
         width: calc(100vw - 400px);
@@ -24,6 +25,7 @@ section#head {
             padding: 16px;
             text-align: center;
             @include determined-screen {
+                height: inherit;
                 width: 100%;
                 * {
                     min-width: 0px;

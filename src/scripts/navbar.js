@@ -4,7 +4,7 @@ window.onscroll = function() {
     let currentScrollPos = window.pageYOffset;
     if (prevScrollpos > currentScrollPos) {
         document.querySelector('nav').style.top = '0';
-        head.style.padding = '90px 0 0 0';
+        head.style.padding = window.innerWidth <= 767 ? '50px 0 0 0' : '90px 0 0 0';
     } else {
         document.querySelector('nav').style.top = '-100%';
         head.style.padding = '0';
