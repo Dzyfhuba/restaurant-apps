@@ -49,14 +49,25 @@
                     object-fit: cover;
                 }
                 >.content {
+                    height: inherit;
                     padding: 16px;
                     h1 {
                         font-size: x-large;
                         margin-bottom: 12px;
                     }
-                    .right {
-                        text-align: right;
+                    .description {
+                        line-height: 1;
+                        max-height: 5;
+                        overflow: hidden;
+                        display: -webkit-box;
+                        -webkit-box-orient: vertical;
+                        -webkit-line-clamp: 5;
                     }
+                }
+                .rest {
+                    height: max-content;
+                    text-align: right;
+                    padding: 16px;
                 }
                 .city {
                     position: absolute;
