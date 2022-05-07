@@ -16,14 +16,21 @@
         transform: translate(-50%, -50%);
         background-color: $color-1;
         margin: auto;
-        padding: 20px;
-        border: 1px solid #888;
+        border-radius: 10px;
         width: 80%;
+        max-height: 80%;
         .modal-header {
+            position: sticky;
+            top: 0;
+            left: 0;
             display: flex;
             justify-content: space-between;
+            background-color: $color-1;
+            padding: 8px 16px;
         }
         .modal-body {
+            padding: 10px;
+            overflow: auto;
             display: flex;
             justify-content: space-between;
             table {
