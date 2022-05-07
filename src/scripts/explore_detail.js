@@ -8,7 +8,7 @@ const structure =  `
     <article class="modal-content">
         <header class="modal-header">
             <h1 id="title" tabindex="0"></h1>
-            <span class="close">&times;</span>
+            <button class="close" aria-label="Close Modal">&times;</button>
         </header>
         <!-- <img src="https://restaurant-api.dicoding.dev/images/medium/id" alt="name" class="img-thumbnail"> -->
         <div id="img-thumbnail"></div>
@@ -87,12 +87,12 @@ const loadContent = (id) => {
 const explore_detail = document.querySelector('#explore-detail');
 explore_detail.innerHTML = structure;
 window.addEventListener('DOMContentLoaded', () => {
-	const modal_elem = document.querySelector('#explore-detail');
-	const modal = new Modal(modal_elem);
-	let btn_toggle = document.querySelector('#explore-detail .btn-toggle');
 	const asd = setInterval(() => {
+		const modal_elem = document.querySelector('#explore-detail');
+		const modal = new Modal(modal_elem);
+		let btn_toggle = document.querySelector('#explore-detail .btn-toggle');
 		btn_toggle = document.querySelectorAll('button[modal-target]');
-		if (btn_toggle.length > 0) {
+		if (btn_toggle.length > 0 && modal_elem && modal) {
 			btn_toggle.forEach(btn => {
 				btn.addEventListener('click', (e) => {
 					explore_detail.innerHTML = structure;

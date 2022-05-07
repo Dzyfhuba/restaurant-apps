@@ -1,12 +1,6 @@
 class Modal {
 	constructor(modal) {
 		this.modal = modal;
-		this.close = this.modal.querySelector('.close');
-		this.close.addEventListener('click', () => {
-			this.modal.style.display = 'none';
-			document.querySelector('body').style.overflow = 'auto';
-			this.modal.querySelector('.modal-content').style.overflow = 'hidden';
-		});
 		this.modal.addEventListener('click', (e) => {
 			if (e.target.classList.contains('modal')) {
 				if (this.modal.style.display === 'block') {
@@ -25,6 +19,7 @@ class Modal {
 				}
 			}
 		});
+		
 	}
 	
 	open() {
@@ -32,6 +27,12 @@ class Modal {
 		document.querySelector('body').style.overflow = 'hidden';
 		this.modal.querySelector('.modal-content').style.overflow = 'auto';
 		this.modal.focus();
+		this.close = this.modal.querySelector('.close');
+		this.close.addEventListener('click', () => {
+			this.modal.style.display = 'none';
+			document.querySelector('body').style.overflow = 'auto';
+			this.modal.querySelector('.modal-content').style.overflow = 'hidden';
+		});
 	}
 
 	close() {

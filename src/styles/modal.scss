@@ -27,6 +27,7 @@
             justify-content: space-between;
             background-color: $color-1;
             padding: 8px 16px;
+            z-index: 3;
         }
         .modal-body {
             padding: 10px;
@@ -58,11 +59,14 @@
     }
     .close {
         color: #aaaaaa;
+        background-color: transparent;
+        border: none;
         font-size: 28px;
         font-weight: bold;
+        aspect-ratio: 1;
+        height: 100%;
         &:hover,
         &:focus {
-            color: #000;
             text-decoration: none;
             cursor: pointer;
         }

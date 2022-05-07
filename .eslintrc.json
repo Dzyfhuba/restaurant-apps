@@ -8,6 +8,14 @@
         "ecmaVersion": "latest",
         "sourceType": "module"
     },
+    // fix for src only
+    "overrides": [
+        {
+            "files": [
+                "src/**/*.js"
+            ]
+        }
+    ],
     "rules": {
         "indent": [
             "error",
