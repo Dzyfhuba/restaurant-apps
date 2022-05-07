@@ -1,14 +1,18 @@
 /* eslint-disable no-undef */
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const path = require('path');
 const WebpackPwaManifest = require('webpack-pwa-manifest');
+const ServiceWorkerWebpackPlugin = require('serviceworker-webpack-plugin');
+const path = require('path');
 
 module.exports = {
-	entry: path.resolve(__dirname, 'src/scripts/app.js'),
+	entry: {
+		app: './src/scripts/app.js',
+		sw_test: './src/scripts/sw_test.js',
+	},
 	output: {
 		path: path.resolve(__dirname, 'dist'),
-		filename: 'bundle.js',
+		filename: '[name].js',
 	},
 	module: {
 		rules: [
@@ -40,6 +44,18 @@ module.exports = {
 		new HtmlWebpackPlugin({
 			template: path.resolve(__dirname, 'src/templates/index.html'),
 			filename: 'index.html',
+			minify: {
+				removeComments: true,
+				collapseWhitespace: true,
+				removeRedundantAttributes: true,
+				useShortDoctype: true,
+				removeEmptyAttributes: true,
+				removeStyleLinkTypeAttributes: true,
+				keepClosingSlash: true,
+				minifyJS: true,
+				minifyCSS: true,
+				minifyURLs: true,
+			},
 		}),
 		new CopyWebpackPlugin({
 			patterns: [
@@ -52,7 +68,7 @@ module.exports = {
 		new WebpackPwaManifest({
 			name: 'Portal of Restaurants',
 			short_name: 'POS',
-			description: 'Portal of Food is a web application that helps you to find the best restaurant in your area. You can search for restaurant by name, location, category, and more. You can also add your favorite restaurant to your favorite list. You can also see your favorite restaurant list. You can also see the restaurant list in your area. You can also see the restaurant list in your favorite category. You can also see the restaurant list in your favorite location. You can also see the restaurant list in your favorite name. You can also see the restaurant list in your favorite category and location.',
+			description: 'Portal of Food is a web application that helps you to find the best restaurant in your area.',
 			background_color: '#ffd369',
 			theme_color: '#ffd369',
 			display: 'standalone',
@@ -73,6 +89,11 @@ module.exports = {
 					purpose: 'maskable',
 				},
 			],
+		}),
+		new ServiceWorkerWebpackPlugin({
+			entry: path.resolve(__dirname, 'src/scripts/sw.js'),
+			filename: 'sw.js',
+			minify: true
 		}),
 	],
 };
