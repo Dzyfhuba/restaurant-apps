@@ -96,4 +96,50 @@
             color: $color-2;
         }
     }
+    .modal {
+        .modal-body {
+            display: flex;
+            flex-direction: column;
+            ul {
+                list-style: none;
+                padding: 0;
+                li {
+                    .review-content {
+                        display: flex;
+                        flex-direction: column;
+                        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+                        background-color: $color-2;
+                        margin-bottom: 16px;
+                        &:hover {
+                            box-shadow: inset 0 -2px 0 0 #fff;
+                        }
+                        .review-header {
+                            display: flex;
+                            flex-direction: column;
+                            h3 {
+                                margin: 0;
+                                color: $color-3;
+                            }
+                            span {
+                                font-size: small;
+                                color: $color-3;
+                            }
+                        }
+                        .review-body {
+                            p {
+                                line-height: 1;
+                                max-height: 5;
+                                overflow: auto;
+                                display: -webkit-box;
+                                -webkit-box-orient: vertical;
+                                -webkit-line-clamp: 5;
+                                // wrap: break-word;
+                                word-wrap: break-word;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

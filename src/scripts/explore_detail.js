@@ -40,6 +40,22 @@ const structure =  `
                     </td>
                 </tr>
             </table>
+			 <div class="review-group">
+			 	<form id="review-form" action="javascript:void(0)">
+					<input type="hidden" name="id" id="review-id" value="">
+				 	<div class="form-group">
+					 	<label for="name">Name</label>
+						<input type="text" class="form-control" id="name" placeholder="Name" required>
+					</div>
+					<div class="form-group">
+						<label for="review">Review</label>
+						<textarea class="form-textarea" id="review" rows="3" placeholder="Enter review" required></textarea>
+					</div>
+					<button type="submit" class="btn">Submit</button>
+				</form>
+				<ul id="review-list"></ul>
+			</div>
+			
         </div>
     </article>
     <button class="helper close" tabindex="0">
@@ -61,6 +77,20 @@ const loadContent = (id) => {
 			const description = data.restaurant.description;
 			const categories = data.restaurant.categories.map(item => `${item.name}, `).join('').replace(/, \s*$/, '');
 			const id = data.restaurant.id;
+			// reverse order of reviews
+			const reviews = data.restaurant.customerReviews.reverse().map(item => `
+				<li>
+					<div class="review-content">
+						<div class="review-header">
+							<h3>${item.name}</h3>
+							<span>${item.date}</span>
+						</div>
+						<div class="review-body">
+							<p>${item.review}</p>
+						</div>
+					</div>
+				</li>
+			`).join('');
 			const structure = $('#explore-detail');
 			structure.find('#title').text(title);
 			structure.find('#address').text(address);
@@ -70,6 +100,8 @@ const loadContent = (id) => {
 			structure.find('#drinks').html(menu_drink);
 			structure.find('#img-thumbnail').html(`<img src="https://restaurant-api.dicoding.dev/images/medium/${img}" alt="${title}" class="img-thumbnail">`);
 			structure.find('#id').text(id);
+			structure.find('#review-id').val(id);
+			structure.find('#review-list').html(reviews);
 			structure.find('#title').attr('aria-label', `${title}`);
 			structure.find('#address').attr('aria-label', `${address}`);
 			structure.find('#description').attr('aria-label', `${description}`);
@@ -84,8 +116,58 @@ const loadContent = (id) => {
 	});
 };
 
+const post_review = () => {
+	const review_form = document.querySelector('#review-form');
+	review_form.addEventListener('submit', (e) => {
+		e.preventDefault();
+		const name = review_form.querySelector('#name').value;
+		const review = review_form.querySelector('#review').value;
+		const id = review_form.querySelector('#review-id').value;
+		const data = {
+			id: id,
+			name: name,
+			review: review,
+		};
+		$.ajaxSetup({
+			headers: {
+				'Content-Type': 'application/x-www-form-urlencoded',
+			}
+		});
+		$.ajax({
+			url: 'https://restaurant-api.dicoding.dev/review',
+			type: 'POST',
+			dataType: 'json',
+			data: data,
+			success: function(data) {
+				const reviews = data.customerReviews.reverse().map(item => {
+					return `
+					<li>
+						<div class="review-content">
+							<div class="review-header">
+								<h3>${item.name}</h3>
+								<span>${item.date}</span>
+							</div>
+							<div class="review-body">
+								<p>${item.review}</p>
+							</div>
+						</div>
+					</li>
+				`;
+				}).join('');
+				const structure = $('#explore-detail');
+				structure.find('#review-list').html(reviews);
+				review_form.reset();
+			},
+			error: function(data) {
+				console.log(data);
+			}
+		});
+	});
+};
+
 const explore_detail = document.querySelector('#explore-detail');
 explore_detail.innerHTML = structure;
+
 window.addEventListener('DOMContentLoaded', () => {
 	const asd = setInterval(() => {
 		const modal_elem = document.querySelector('#explore-detail');
@@ -98,10 +180,10 @@ window.addEventListener('DOMContentLoaded', () => {
 					explore_detail.innerHTML = structure;
 					modal.open();
 					loadContent(e.target.getAttribute('data-id'));
+					post_review();
 				});
 			});
 			clearInterval(asd);
 		}
 	}, 10);
-	
 });
