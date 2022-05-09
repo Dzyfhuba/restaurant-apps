@@ -1,6 +1,7 @@
 import Modal from './modal';
 import $ from 'jquery';
 import CONFIG from './config';
+import favorite_restaurant_db from './favorite_restaurant_idb';
 
 const structure =  `
     <div class="helper" tabindex="-1">
@@ -55,8 +56,10 @@ const structure =  `
 				</form>
 				<ul id="review-list"></ul>
 			</div>
-			
         </div>
+			<button type="button" class="btn favorite-toggle" id="favorite-toggle" data-id="" aria-label="Toggle Favorite">
+				<i class="fas fa-heart"></i>
+			</button>
     </article>
     <button class="helper close" tabindex="0">
         Press enter at this point or press escape to close modal.
@@ -100,6 +103,7 @@ const loadContent = (id) => {
 			structure.find('#drinks').html(menu_drink);
 			structure.find('#img-thumbnail').html(`<img src="${CONFIG.IMAGE_URL_LARGE}${img}" alt="${title}">`);
 			structure.find('#id').text(id);
+			structure.find('button.favorite-toggle').attr('data-id', id);
 			structure.find('#review-id').val(id);
 			structure.find('#review-list').html(reviews);
 			structure.find('#title').attr('aria-label', `${title}`);
@@ -165,6 +169,33 @@ const post_review = () => {
 	});
 };
 
+const favoriteToggle = () => {
+	const favorite_toggle = document.querySelectorAll('.favorite-toggle');
+	favorite_toggle.forEach(item => {
+		item.addEventListener('click', (e) => {
+			const id = item.getAttribute('data-id');
+			const data = {
+				id: id,
+			};
+			if (item.classList.contains('favorite-red')) {
+				item.classList.remove('favorite-red');
+				favorite_restaurant_db.removeFavoriteRestaurant(data).then(() => {
+					console.log('remove success');
+				}).catch(() => {
+					console.log('remove failed');
+				});
+			} else {
+				item.classList.add('favorite-red');
+				favorite_restaurant_db.addFavoriteRestaurant(data).then(() => {
+					console.log('add success');
+				}).catch(() => {
+					console.log('add failed');
+				});
+			}
+		});
+	});
+};
+
 const explore_detail = document.querySelector('#explore-detail');
 explore_detail.innerHTML = structure;
 
@@ -181,6 +212,7 @@ window.addEventListener('DOMContentLoaded', () => {
 					modal.open();
 					loadContent(e.target.getAttribute('data-id'));
 					post_review();
+					favoriteToggle();
 				});
 			});
 			clearInterval(asd);

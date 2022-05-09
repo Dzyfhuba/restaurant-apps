@@ -11,3 +11,10 @@ import './explore_detail';
 import '@fortawesome/fontawesome-free/js/all';
 
 console.log('Hello Coders! :)');
+
+// prevent scrolling from within input field
+$(document).on('touchmove', function(e) {
+	if (e.target.nodeName == 'INPUT') {
+		this.style.pointerEvents = 'none';
+	}
+});

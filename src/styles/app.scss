@@ -5,6 +5,10 @@ body {
     background-color: $color-1;
     color: $color-4;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    .text-link {
+        text-decoration: none;
+        color: $color-4;
+    }
     @import './modal.scss';
     @import './form.scss';
     @import './nav.scss';

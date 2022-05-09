@@ -149,5 +149,22 @@
                 }
             }
         }
+        .favorite-toggle {
+            position: sticky;
+            bottom: 10px;
+            left: 100%;
+            margin: 0 16px 16px 0;
+            background-color: $color-3;
+            color: $color-1;
+            padding: 16px;
+            border: none;
+            font-weight: bolder;
+            min-height: 44px;
+            min-width: 44px;
+            border-radius: 100%
+        }
+        .favorite-red {
+            color: red;
+        }
     }
 }
