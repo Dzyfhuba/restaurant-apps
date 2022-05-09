@@ -1,8 +1,9 @@
 import $ from 'jquery';
+import CONFIG from './config';
 
 const list = document.querySelector('#explore .list');
 $.ajax({
-	url: 'https://restaurant-api.dicoding.dev/list',
+	url: `${CONFIG.API_URL}/list`,
 	type: 'GET',
 	dataType: 'json',
 	success: function(data) {
@@ -11,7 +12,7 @@ $.ajax({
 			<div class="wrapper">
 			<article class="card" tabindex="0">
 				<span class="city">${item.city}</span>
-				<img src="https://restaurant-api.dicoding.dev/images/small/${item.pictureId}" alt="${item.name}">
+				<img src="${CONFIG.IMAGE_URL_SMALL}${item.pictureId}" alt="${item.name}">
 				<div class="content">
 					<span class="rating">Rating: ${item.rating}</span>
 					<header>

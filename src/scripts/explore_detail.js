@@ -1,5 +1,6 @@
 import Modal from './modal';
 import $ from 'jquery';
+import CONFIG from './config';
 
 const structure =  `
     <div class="helper" tabindex="-1">
@@ -10,7 +11,6 @@ const structure =  `
             <h1 id="title" tabindex="0"></h1>
             <button class="close" aria-label="Close Modal">&times;</button>
         </header>
-        <!-- <img src="https://restaurant-api.dicoding.dev/images/medium/id" alt="name" class="img-thumbnail"> -->
         <div id="img-thumbnail"></div>
         <div class="modal-body">
             <table>
@@ -65,7 +65,7 @@ const structure =  `
 
 const loadContent = (id) => {
 	$.ajax({
-		url: `https://restaurant-api.dicoding.dev/detail/${id}`,
+		url: `${CONFIG.API_URL}/detail/${id}`,
 		type: 'GET',
 		dataType: 'json',
 		success: function(data) {
@@ -98,7 +98,7 @@ const loadContent = (id) => {
 			structure.find('#category').html(categories);
 			structure.find('#foods').html(menu_food);
 			structure.find('#drinks').html(menu_drink);
-			structure.find('#img-thumbnail').html(`<img src="https://restaurant-api.dicoding.dev/images/medium/${img}" alt="${title}" class="img-thumbnail">`);
+			structure.find('#img-thumbnail').html(`<img src="${CONFIG.IMAGE_URL_LARGE}${img}" alt="${title}">`);
 			structure.find('#id').text(id);
 			structure.find('#review-id').val(id);
 			structure.find('#review-list').html(reviews);
@@ -134,7 +134,7 @@ const post_review = () => {
 			}
 		});
 		$.ajax({
-			url: 'https://restaurant-api.dicoding.dev/review',
+			url: `${CONFIG.API_URL}/review`,
 			type: 'POST',
 			dataType: 'json',
 			data: data,

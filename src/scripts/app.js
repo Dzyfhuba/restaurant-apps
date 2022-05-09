@@ -10,6 +10,4 @@ import './skip_content';
 import './explore_detail';
 import '@fortawesome/fontawesome-free/js/all';
 
-
-
 console.log('Hello Coders! :)');
