@@ -20,6 +20,13 @@ const database = {
 		const restaurants = await store.getAll();
 		return restaurants;
 	},
+	async getFavoriteRestaurant(id) {
+		const db = await dbPromise;
+		const tx = await db.transaction(FAVORITE_RESTAURANT_STORE);
+		const store = tx.objectStore(FAVORITE_RESTAURANT_STORE);
+		const restaurant = await store.get(id.id);
+		return restaurant;
+	},
 	async addFavoriteRestaurant(restaurant) {
 		const db = await dbPromise;
 		const tx = await db.transaction(FAVORITE_RESTAURANT_STORE, 'readwrite');

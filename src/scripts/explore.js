@@ -1,14 +1,15 @@
 import $ from 'jquery';
 import CONFIG from './config';
 
-const list = document.querySelector('#explore .list');
-$.ajax({
-	url: `${CONFIG.API_URL}/list`,
-	type: 'GET',
-	dataType: 'json',
-	success: function(data) {
-		list.innerHTML = data.restaurants.map(item => {
-			return `
+const explore = () => {
+	const list = document.querySelector('#explore .list');
+	$.ajax({
+		url: `${CONFIG.API_URL}/list`,
+		type: 'GET',
+		dataType: 'json',
+		success: function (data) {
+			list.innerHTML = data.restaurants.map(item => {
+				return `
 			<div class="wrapper">
 			<article class="card" tabindex="0">
 				<span class="city">${item.city}</span>
@@ -26,9 +27,12 @@ $.ajax({
 			</article>
 		</div>
 			`;
-		}).join('');
-	},
-	error: function(data) {
-		console.log(data);
-	}
-});
+			}).join('');
+		},
+		error: function (data) {
+			console.log(data);
+		}
+	});
+};
+
+export default explore;

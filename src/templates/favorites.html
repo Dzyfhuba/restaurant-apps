@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Portal of Food is a web application that helps you to find the best restaurant in your area. You can search for restaurant by name, location, category, and more. You can also add your favorite restaurant to your favorite list. You can also see your favorite restaurant list. You can also see the restaurant list in your area. You can also see the restaurant list in your favorite category. You can also see the restaurant list in your favorite location. You can also see the restaurant list in your favorite name. You can also see the restaurant list in your favorite category and location.">
+
+    <title>Favorite Restaurants | Portal Of Foods</title>
+</head>
+
+<body id="favoritePage">
+    <section id="skipContent" class="helper" tabindex="0">
+        <h1>
+            This is a helper if you are using a screen reader. Press tab to go to navigation of helper.
+        </h1>
+        <a href="#head">Skip to head or the jumbotron</a>
+        <a href="#nav">Skip to navigation</a>
+        <a href="#mainContent">Skip to main content</a>
+        <a href="#footer">Skip to footer</a>
+        <a href="#skipContent">Repeat this helper</a>
+    </section>
+    <nav id="nav">
+        <a href="/" class="brand">
+            <span>P</span><span>o</span><span>F</span>
+        </a>
+        <button class="nav-toggle" aria-label="Toggle to open or close navigation bar"><i class="fa-solid fa-bars fa-2xl"></i></button>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="#">Favorite</a></li>
+            <li>
+                <a href="https://hafidzubaidillah.com" target="_blank" rel="noopener">About Us</a>
+            </li>
+        </ul>
+        <a href="#skipContent" class="helper">Press enter to main helper or next to the head of content</a>
+    </nav>
+    <main id="mainContent">
+        <section id="favorite-list" class="favorite-list">
+            <h1>Favorite Restaurants</h1>
+            <div class="favorite-list-container"></div>
+        </section>
+        <section id="restaurant-list" class="restaurant-list">
+            <h1>Restaurants</h1>
+            <div class="restaurant-list-container"></div>
+        </section>
+        <div class="modal" id="restaurant-detail">
+            <div class="helper" tabindex="-1">
+                Modal has been opened. Press escape to close.
+            </div>
+            <article class="modal-content">
+                <header class="modal-header">
+                    <h1 id="title" tabindex="0"></h1>
+                    <button class="close" aria-label="Close Modal">&times;</button>
+                </header>
+                <div id="img-thumbnail"></div>
+                <div class="modal-body">
+                    <table>
+                        <tr style="display: none;">
+                            <td>id</td>
+                            <td id="id" tabindex="0"></td>
+                        </tr>
+                        <tr tabindex="0">
+                            <td>Deskripsi</td>
+                            <td id="description"></td>
+                        </tr>
+                        <tr tabindex="0">
+                            <td>Kategori</td>
+                            <td id="category"></td>
+                        </tr>
+                        <tr tabindex="0">
+                            <td>Alamat</td>
+                            <td id="address"></td>
+                        </tr>
+                        <tr tabindex="0">
+                            <td>Menu</td>
+                            <td>
+                                <span id="menu_food">Foods</span>
+                                <ul id="foods"></ul>
+                                <span id="menu_drink">Drinks</span>
+                                <ul id="drinks"></ul>
+                            </td>
+                        </tr>
+                    </table>
+                     <div class="review-group">
+                         <form id="review-form" action="javascript:void(0)">
+                            <input type="hidden" name="id" id="review-id" value="">
+                             <div class="form-group">
+                                 <label for="name">Name</label>
+                                <input type="text" class="form-control" id="name" placeholder="Name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="review">Review</label>
+                                <textarea class="form-textarea" id="review" rows="3" placeholder="Enter review" required></textarea>
+                            </div>
+                            <button type="submit" class="btn">Submit</button>
+                        </form>
+                        <ul id="review-list"></ul>
+                    </div>
+                </div>
+                    <button type="button" class="btn favorite-toggle" id="favorite-toggle" data-id="" aria-label="Toggle Favorite">
+                        <i class="fas fa-heart"></i>
+                    </button>
+            </article>
+            <button class="helper close" tabindex="0">
+                Press enter at this point or press escape to close modal.
+            </button>
+        </div>
+    </main>
+    <footer id="footer" tabindex="0">
+        <p>Copyright © - Portal of Foods</p>
+    </footer>
+</body>
+
+</html>

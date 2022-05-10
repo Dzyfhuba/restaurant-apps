@@ -28,7 +28,7 @@ const structure =  `
                     <td id="category"></td>
                 </tr>
                 <tr tabindex="0">
-                    <td>Address</td>
+                    <td>Alamat</td>
                     <td id="address"></td>
                 </tr>
                 <tr tabindex="0">
@@ -113,6 +113,8 @@ const loadContent = (id) => {
 			structure.find('#foods').attr('aria-label', `${menu_food}`);
 			structure.find('#drinks').attr('aria-label', `${menu_drink}`);
 			structure.find('#img-thumbnail').attr('aria-label', `${title}`);
+
+			autoFavoriteToggle(id);
 		},
 		error: function(data) {
 			console.log(data);
@@ -172,7 +174,7 @@ const post_review = () => {
 const favoriteToggle = () => {
 	const favorite_toggle = document.querySelectorAll('.favorite-toggle');
 	favorite_toggle.forEach(item => {
-		item.addEventListener('click', (e) => {
+		item.addEventListener('click', () => {
 			const id = item.getAttribute('data-id');
 			const data = {
 				id: id,
@@ -196,26 +198,49 @@ const favoriteToggle = () => {
 	});
 };
 
-const explore_detail = document.querySelector('#explore-detail');
-explore_detail.innerHTML = structure;
-
-window.addEventListener('DOMContentLoaded', () => {
-	const asd = setInterval(() => {
-		const modal_elem = document.querySelector('#explore-detail');
-		const modal = new Modal(modal_elem);
-		let btn_toggle = document.querySelector('#explore-detail .btn-toggle');
-		btn_toggle = document.querySelectorAll('button[modal-target]');
-		if (btn_toggle.length > 0 && modal_elem && modal) {
-			btn_toggle.forEach(btn => {
-				btn.addEventListener('click', (e) => {
-					explore_detail.innerHTML = structure;
-					modal.open();
-					loadContent(e.target.getAttribute('data-id'));
-					post_review();
-					favoriteToggle();
-				});
-			});
-			clearInterval(asd);
+const autoFavoriteToggle = (id) => {
+	// check if the id is in the favorite list
+	const data = {
+		id: id,
+	};
+	favorite_restaurant_db.getFavoriteRestaurant(data).then((e) => {
+		console.log('get success');
+		const favorite_toggle = document.querySelector(`.favorite-toggle[data-id="${id}"]`);
+		if (e !== undefined) {
+			favorite_toggle.classList.add('favorite-red');
+		} else {
+			favorite_toggle.classList.remove('favorite-red');
 		}
-	}, 10);
-});
+	}).catch((e) => {
+		console.log('get failed', e);
+	});
+};
+
+// contain all above into one function
+const exploreDetail = () => {
+	const explore_detail = document.querySelector('#explore-detail');
+	explore_detail.innerHTML = structure;
+
+	window.addEventListener('DOMContentLoaded', () => {
+		const asd = setInterval(() => {
+			const modal_elem = document.querySelector('#explore-detail');
+			const modal = new Modal(modal_elem);
+			let btn_toggle = document.querySelector('#explore-detail .btn-toggle');
+			btn_toggle = document.querySelectorAll('button[modal-target]');
+			if (btn_toggle.length > 0 && modal_elem && modal) {
+				btn_toggle.forEach(btn => {
+					btn.addEventListener('click', (e) => {
+						explore_detail.innerHTML = structure;
+						modal.open();
+						loadContent(e.target.getAttribute('data-id'));
+						post_review();
+						favoriteToggle();
+					});
+				});
+				clearInterval(asd);
+			}
+		}, 10);
+	});
+};
+
+export {exploreDetail, favoriteToggle, autoFavoriteToggle};

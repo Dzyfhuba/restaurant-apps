@@ -17,17 +17,6 @@ module.exports = {
 	module: {
 		rules: [
 			{
-				test: /\.css$/,
-				use: [
-					{
-						loader: 'style-loader',
-					},
-					{
-						loader: 'css-loader',
-					},
-				],
-			},
-			{
 				test: /\.s[ac]ss$/i,
 				use: [
 					// Creates `style` nodes from JS strings
@@ -44,18 +33,12 @@ module.exports = {
 		new HtmlWebpackPlugin({
 			template: path.resolve(__dirname, 'src/templates/index.html'),
 			filename: 'index.html',
-			minify: {
-				removeComments: true,
-				collapseWhitespace: true,
-				removeRedundantAttributes: true,
-				useShortDoctype: true,
-				removeEmptyAttributes: true,
-				removeStyleLinkTypeAttributes: true,
-				keepClosingSlash: true,
-				minifyJS: true,
-				minifyCSS: true,
-				minifyURLs: true,
-			},
+			minify: true,
+		}),
+		new HtmlWebpackPlugin({
+			template: path.resolve(__dirname, 'src/templates/favorites.html'),
+			filename: 'favorites.html',
+			minify: true,
 		}),
 		new CopyWebpackPlugin({
 			patterns: [
