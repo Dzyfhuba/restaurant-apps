@@ -1,7 +1,7 @@
 import $ from 'jquery';
 import CONFIG from '../config';
 import Modal from '../modal';
-import { favoriteToggle, autoFavoriteToggle } from '../explore_detail';
+import { autoFavoriteToggle } from '../explore_detail';
 import database from '../favorite_restaurant_idb'; 
 
 const getRestaurantList = () => {

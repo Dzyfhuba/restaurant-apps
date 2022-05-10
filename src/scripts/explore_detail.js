@@ -2,8 +2,6 @@ import Modal from './modal';
 import $ from 'jquery';
 import CONFIG from './config';
 import favorite_restaurant_db from './favorite_restaurant_idb';
-import favorites from './favorites/favorites';
-import { restaurants } from './favorites/restaurants';
 
 const structure =  `
     <div class="helper" tabindex="-1">
