@@ -2,25 +2,11 @@
 @import 'media_query.scss';
 #favoritePage {
     #mainContent {
-        .favorite-list {
-            padding: 0 20px;
-            .favorite-item {
-                @include sm-screen {
-                    display: flex;
-                    flex-direction: column;
-                    height: 100px;
-                    img {
-                        height: inherit;
-                    }
-                    header {
-                        height: inherit;
-                    }
-                }
-            }
-        }
+        .favorite-list,
         .restaurant-list {
             padding: 0 20px;
-            .restaurant-item {
+            margin-bottom: 64px;
+            .item {
                 @include sm-screen {
                     display: flex;
                     flex-direction: column;

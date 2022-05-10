@@ -17,6 +17,12 @@ window.onscroll = function() {
 		on_top.style.padding = '0';
 	}
 	prevScrollpos = currentScrollPos;
+
+	// if the page is on the top, show the navbar
+	if (window.pageYOffset === 0) {
+		document.querySelector('nav').style.top = '0';
+		on_top.style.padding = window.innerWidth <= 767 ? '50px 0 0 0' : '90px 0 0 0';
+	}
 };
 const navigation_prop = {
 	open: false
