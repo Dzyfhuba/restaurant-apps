@@ -10,12 +10,19 @@ import '@fortawesome/fontawesome-free/js/all';
 import favorites from './favorites/app';
 import { exploreDetail } from './explore_detail';
 import NavigationBar from './navigation-bar';
+import Loading from './loading';
 console.log('Hello Coders! :)');
 
 // check if page still loading
 if (document.readyState !== 'complete') {
 	console.log('Page is still loading...');
+	
+	// loading
+	const loading = document.createElement('loading-layer');
+	document.body.appendChild(loading);
+	new Loading();
 	window.addEventListener('load', () => {
+		document.body.removeChild(loading);
 		console.log('Page is loaded!');
 	});
 } else {
