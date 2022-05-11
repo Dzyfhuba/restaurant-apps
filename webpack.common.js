@@ -9,6 +9,7 @@ module.exports = {
 	entry: {
 		app: './src/scripts/app.js',
 		sw_test: './src/scripts/sw_test.js',
+		navigation: './src/scripts/navigation-bar.js',
 	},
 	output: {
 		path: path.resolve(__dirname, 'dist'),

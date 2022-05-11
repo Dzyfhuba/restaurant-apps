@@ -3,7 +3,7 @@ import 'regenerator-runtime';
 import CacheHelper from './cache_helper';
 
 const {assets} = global.serviceWorkerOption;
-
+console.log('assets', assets);
 self.addEventListener('install', (event) => {
 	console.log('Installing Service Worker ...');
 	event.waitUntil(CacheHelper.cachingAppShell([...assets], './'));

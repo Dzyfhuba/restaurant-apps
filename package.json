@@ -30,6 +30,7 @@
     "karma-webpack": "^4.0.2",
     "sass": "^1.51.0",
     "sass-loader": "^10.1.1",
+    "serviceworker-webpack-plugin": "^1.0.1",
     "strip-loader": "^0.1.2",
     "style-loader": "^1.2.1",
     "webpack": "^4.46.0",
@@ -43,7 +44,7 @@
     "@fortawesome/fontawesome-free": "^6.1.1",
     "idb": "^7.0.1",
     "jquery": "^3.6.0",
-    "regenerator-runtime": "^0.13.5",
-    "serviceworker-webpack-plugin": "^1.0.1"
+    "lit": "^2.2.3",
+    "regenerator-runtime": "^0.13.5"
   }
 }
