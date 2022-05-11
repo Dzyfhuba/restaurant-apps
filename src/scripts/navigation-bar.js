@@ -104,7 +104,7 @@ class NavigationBar extends LitElement {
 			:host > ul {
 					list-style: none;
 					margin: 0 16px 0 0;
-					padding: 0;
+					marginTop: 0;
 					display: flex;
 					align-items: center;
 			}
@@ -127,7 +127,7 @@ class NavigationBar extends LitElement {
 					text-align: center;
 			}
 			:host > ul > li > a {
-					padding: 16px;
+					marginTop: 16px;
 					text-decoration: none;
 					color: inherit;
 			}
@@ -169,7 +169,37 @@ class NavigationBar extends LitElement {
 
 	connectedCallback() {
 		super.connectedCallback();
+		this.next_element = this.parentElement.querySelectorAll('section')[1];
+		if (this.next_element.parentElement.tagName === 'MAIN') {
+			this.next_element = this.next_element.parentElement;
+		}
+		let host = this.shadowRoot.getRootNode().host;
+		console.log(this.next_element);
+		let prevScrollpos = window.pageYOffset;
+		let on_top = '100px';
+		if (window.innerWidth < 768) {
+			on_top = '50px';
+		}
+		// if page is at the top
+		if (window.scrollY === 0) {
+			this.next_element.style.marginTop = on_top;
+		}
+
+		// if page is scrolled
+		window.onscroll = function() {
+			let currentScrollPos = window.pageYOffset;
+			if (prevScrollpos > currentScrollPos) {
+				host.style.top = '0';
+			} else {
+				host.style.top = '-100%';
+			}
+			prevScrollpos = currentScrollPos;
 		
+			// if the page is on the top, show the navbar
+			if (window.pageYOffset === 0) {
+				host.style.top = '0';
+			}
+		};
 	}
 	
 	disconnectedCallback() {
@@ -232,10 +262,6 @@ class NavigationBar extends LitElement {
 				ul.style.display = 'none';
 			}, 300);
 		}
-
-	}
-	test() {
-		console.log('test');
 	}
     
 	render() {
