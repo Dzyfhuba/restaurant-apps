@@ -11,12 +11,24 @@ class Loading extends LitElement {
                     left: 0;
                     width: 100%;
                     height: 100%;
-                    background-color: rgba(0, 0, 0, 0.5);
+                    background-color: #222831;
                     z-index: 9999;
                     display: flex;
                     justify-content: center;
                     align-items: center;
                 }
+				.spinning {
+					width: 50px;
+					height: 50px;
+					border: 5px solid rgba(255, 255, 255, 0.5);
+					border-top: 5px solid rgba(255, 255, 255, 1);
+					border-radius: 50%;
+					animation: spin 2s linear infinite;
+				}
+				@keyframes spin {
+					0% { transform: rotate(0deg); }
+					100% { transform: rotate(360deg); }
+				}
             `,
 		];
 	}
@@ -42,6 +54,10 @@ class Loading extends LitElement {
 		this.loading = false;
 	}
 
+	attributeChangedCallback(name, oldValue, newValue) {
+		super.attributeChangedCallback(name, oldValue, newValue);
+	}
+
 	static get isLoading() {
 		return this.loading;
 	}
@@ -50,9 +66,16 @@ class Loading extends LitElement {
 		this.loading = value;
 	}
 
+	close() {
+		this.isFailed = false;
+		this.isLoading = false;
+
+		this.remove();
+	}
+
 	render() {
 		return html`
-            <div>Loading...</div>
+			<div class="spinning"></div>
         `;
 	}
 }

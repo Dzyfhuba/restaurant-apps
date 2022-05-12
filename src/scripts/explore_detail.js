@@ -71,6 +71,10 @@ const loadContent = (id) => {
 		url: `${CONFIG.API_URL}/detail/${id}`,
 		type: 'GET',
 		dataType: 'json',
+		beforeSend: function(){
+			const loading = document.createElement('loading-layer');
+			$('body').append(loading);
+		},
 		success: function(data) {
 			const title = data.restaurant.name;
 			const address = data.restaurant.address;
@@ -115,9 +119,21 @@ const loadContent = (id) => {
 			structure.find('#img-thumbnail').attr('aria-label', `${title}`);
 
 			autoFavoriteToggle(id);
+
+			$('loading-layer').remove();
 		},
 		error: function(data) {
 			console.log(data);
+			$('loading-layer').remove();
+			
+			const structure = $('#explore-detail');
+			// fill with error message
+			structure.find('#title').text('Error, cannot load data');
+			structure.find('#address').text('Error, cannot load data');
+			structure.find('#description').text('Error, cannot load data');
+			structure.find('#category').text('Error, cannot load data');
+			structure.find('#foods').text('Error, cannot load data');
+			structure.find('#drinks').text('Error, cannot load data');
 		}
 	});
 };
