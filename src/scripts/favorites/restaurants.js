@@ -53,6 +53,7 @@ const getRestaurantDetail = (id) => {
 				</li>
 			`).join('');
 			const structure = $('#restaurant-detail');
+			structure.find('.go-to-detail').html(`<a href="detailrestaurant.html?id=${id}" tabindex="0">Show Full Page</a>`);
 			structure.find('#title').text(title);
 			structure.find('#address').text(address);
 			structure.find('#description').text(description);

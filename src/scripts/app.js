@@ -6,12 +6,12 @@ import explore from './explore';
 import './modal';
 import head from './head';
 import './skip_content';
-import '@fortawesome/fontawesome-free/js/all';
 import favorites from './favorites/app';
 import { exploreDetail } from './explore_detail';
 import NavigationBar from './navigation-bar';
 import Loading from './loading';
-import Failed from './failed';
+import RestaurantDetail from './detail/app';
+import review from './detail/review'; 
 
 console.log('Hello Coders! :)');
 
@@ -39,6 +39,10 @@ if (document.readyState !== 'complete') {
 	}
 	if (window.location.pathname === '/favorites.html') {
 		favorites();
+	}
+	if (window.location.pathname.includes('/detailrestaurant.html')) {
+		new RestaurantDetail().render();
+		review();
 	}
 
 	// prevent scrolling from within input field

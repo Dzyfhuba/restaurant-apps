@@ -39,9 +39,17 @@
             left: 0;
             display: flex;
             justify-content: space-between;
+            align-items: center;
             background-color: $color-1;
             padding: 8px 16px;
             z-index: 3;
+            a {
+                color: $color-4;
+                text-decoration: none;
+                &:hover {
+                    box-shadow: inset 0 -2px 0 0 #eee;
+                }
+            }
         }
         .modal-body {
             padding: 10px;

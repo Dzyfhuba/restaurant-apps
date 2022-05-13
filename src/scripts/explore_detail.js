@@ -10,6 +10,7 @@ const structure =  `
     <article class="modal-content">
         <header class="modal-header">
             <h1 id="title" tabindex="0"></h1>
+			<div class="go-to-detail"></div>
             <button class="close" aria-label="Close Modal">&times;</button>
         </header>
         <div id="img-thumbnail"></div>
@@ -99,6 +100,7 @@ const loadContent = (id) => {
 				</li>
 			`).join('');
 			const structure = $('#explore-detail');
+			structure.find('.go-to-detail').html(`<a href="detailrestaurant.html?id=${id}" tabindex="0">Show Full Page</a>`);
 			structure.find('#title').text(title);
 			structure.find('#address').text(address);
 			structure.find('#description').text(description);
@@ -176,8 +178,7 @@ const post_review = () => {
 					</li>
 				`;
 				}).join('');
-				const structure = $('#explore-detail');
-				structure.find('#review-list').html(reviews);
+				$('#review-list').html(reviews);
 				review_form.reset();
 			},
 			error: function(data) {
@@ -259,4 +260,4 @@ const exploreDetail = () => {
 	});
 };
 
-export {exploreDetail, favoriteToggle, autoFavoriteToggle};
+export {exploreDetail, favoriteToggle, autoFavoriteToggle, post_review};

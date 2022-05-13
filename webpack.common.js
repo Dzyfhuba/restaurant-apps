@@ -41,6 +41,11 @@ module.exports = {
 			filename: 'favorites.html',
 			minify: true,
 		}),
+		new HtmlWebpackPlugin({
+			template: path.resolve(__dirname, 'src/templates/detailrestaurant.html'),
+			filename: 'detailrestaurant.html',
+			minify: true,
+		}),
 		new CopyWebpackPlugin({
 			patterns: [
 				{
@@ -53,8 +58,8 @@ module.exports = {
 			name: 'Portal of Restaurants',
 			short_name: 'POS',
 			description: 'Portal of Food is a web application that helps you to find the best restaurant in your area.',
-			background_color: '#ffd369',
-			theme_color: '#ffd369',
+			background_color: '#222831',
+			theme_color: '#393E46',
 			display: 'standalone',
 			start_url: '.',
 			crossorigin: 'use-credentials',
@@ -62,13 +67,13 @@ module.exports = {
 				{
 					src: path.resolve(__dirname, 'src/public/images/icons/icon.png'),
 					sizes: [72, 96, 128, 144, 192, 256, 384, 512],
-					destination: path.resolve(__dirname, 'dist/icons'),
+					destination: 'images/icons',
 					type: 'image/png',
 				},
 				{
 					src: path.resolve(__dirname, 'src/public/images/icons/icon.png'),
 					sizes: [72, 96, 128, 144, 192, 256, 384, 512],
-					destination: path.resolve(__dirname, 'dist/icons'),
+					destination: 'images/icons',
 					type: 'image/png',
 					purpose: 'maskable',
 				},

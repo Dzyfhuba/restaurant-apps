@@ -9,6 +9,12 @@ body {
         text-decoration: none;
         color: $color-4;
     }
+    button,
+    input,
+    textarea {
+        min-width: 44px;
+        min-height: 44px;
+    }
     @import './modal.scss';
     @import './form.scss';
     @import './head.scss';
