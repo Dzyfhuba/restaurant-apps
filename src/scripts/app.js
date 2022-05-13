@@ -11,7 +11,8 @@ import { exploreDetail } from './explore_detail';
 import NavigationBar from './navigation-bar';
 import Loading from './loading';
 import RestaurantDetail from './detail/app';
-import review from './detail/review'; 
+import review from './detail/review';
+import '@fortawesome/fontawesome-free/js/all.min';
 
 console.log('Hello Coders! :)');
 
