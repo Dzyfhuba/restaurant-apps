@@ -17,7 +17,8 @@ class RestaurantDetail extends LitElement {
 		   	}
 			@media (max-width: 1200px) {
 				:host {
-					width: 100%;
+					padding: 0px;
+					width: 90%;
 				}
 			}
 			:host ul {

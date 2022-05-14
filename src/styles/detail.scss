@@ -4,13 +4,11 @@
     .review-group {
         display: flex;
         flex-direction: column;
-        padding: 24px;
+        // padding: 24px;
         width: 1000px;
         margin: 0 auto;
         @include determined-screen {
-            .review-group {
-                width: 100%;
-            }
+            width: 90%;
         }
         ul {
             list-style: none;

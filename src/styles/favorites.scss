@@ -68,6 +68,13 @@
             object-fit: cover;
         }
     }
+    .go-to-detail {
+        a {
+            display: block;
+            min-height: 44px;
+            line-height: 44px;
+        }
+    }
     .modal-body {
         display: flex;
         flex-direction: column;
