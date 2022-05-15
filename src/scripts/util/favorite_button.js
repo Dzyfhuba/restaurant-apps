@@ -25,6 +25,7 @@ const favoriteButtonInitiator = {
 		}
 
 		favoriteButton.addEventListener('click', async () => {
+			console.log('click');
 			if (await this._isRestaurantExist(id)) {
 				await database.removeFavoriteRestaurant(this._restaurant);
 				favoriteButton.classList.remove('favorite-red');
