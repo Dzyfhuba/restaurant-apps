@@ -6,7 +6,9 @@
   "scripts": {
     "start-dev": "webpack serve --config webpack.dev.js --host 0.0.0.0 --port 3000",
     "build": "webpack --config webpack.prod.js",
-    "test": "karma start"
+    "lint": "eslieslint ./src",
+    "test": "karma start",
+    "e2e": "npx codeceptjs run --steps"
   },
   "eslintIgnore": [
     "node_modules",
@@ -20,6 +22,7 @@
     "@babel/preset-env": "^7.10.4",
     "@webpack-cli/serve": "^1.6.1",
     "babel-loader": "^8.1.0",
+    "codeceptjs": "^3.3.3",
     "copy-webpack-plugin": "^6.0.3",
     "css-loader": "^3.6.0",
     "eslint": "^7.4.0",
@@ -32,6 +35,7 @@
     "karma-jasmine": "^3.3.1",
     "karma-sourcemap-loader": "^0.3.7",
     "karma-webpack": "^4.0.2",
+    "puppeteer": "^14.1.0",
     "sass": "^1.51.0",
     "sass-loader": "^10.1.1",
     "serviceworker-webpack-plugin": "^1.0.1",
