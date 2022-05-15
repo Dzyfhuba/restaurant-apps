@@ -217,10 +217,10 @@ const favoriteToggle = () => {
 
 const autoFavoriteToggle = (id) => {
 	// check if the id is in the favorite list
-	const data = {
-		id: id,
-	};
-	favorite_restaurant_db.getFavoriteRestaurant(data).then((e) => {
+	// const data = {
+	// 	id: id,
+	// };
+	favorite_restaurant_db.getFavoriteRestaurant(id).then((e) => {
 		console.log('get success');
 		const favorite_toggle = document.querySelector(`.favorite-toggle[data-id="${id}"]`);
 		if (e !== undefined) {

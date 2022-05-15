@@ -90,6 +90,13 @@ class RestaurantDetail extends LitElement {
 		console.log(this.id);
         
 		this.fetchRestaurant(this.id);
+
+		// get the favorite restaurant from the database
+		database.getFavoriteRestaurant(this.id).then((restaurant) => {
+			if (restaurant) {
+				this.shadowRoot.getElementById('favorite-toggle').classList.add('favorite-red');
+			}
+		});
 	}
 
 	toggleFavorite() {

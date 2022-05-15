@@ -24,7 +24,7 @@ const database = {
 		const db = await dbPromise;
 		const tx = await db.transaction(FAVORITE_RESTAURANT_STORE);
 		const store = tx.objectStore(FAVORITE_RESTAURANT_STORE);
-		const restaurant = await store.get(id.id);
+		const restaurant = await store.get(id);
 		return restaurant;
 	},
 	async addFavoriteRestaurant(restaurant) {

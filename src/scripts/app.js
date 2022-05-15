@@ -24,10 +24,7 @@ if (document.readyState !== 'complete') {
 	const loading = document.createElement('loading-layer');
 	document.body.appendChild(loading);
 	new Loading();
-	window.addEventListener('load', () => {
-		document.body.removeChild(loading);
-		console.log('Page is loaded!');
-	});
+	
 	
 	// call navigation bar
 	const nav = new NavigationBar();
@@ -51,6 +48,12 @@ if (document.readyState !== 'complete') {
 		if (e.target.nodeName == 'INPUT') {
 			this.style.pointerEvents = 'none';
 		}
+	});
+	window.addEventListener('load', () => {
+		if (window.location.pathname == '/' || window.location.pathname == '/favorites.html') {
+			document.body.removeChild(loading);
+		}
+		console.log('Page is loaded!');
 	});
 } else {
 	console.log('Page is loaded!');
