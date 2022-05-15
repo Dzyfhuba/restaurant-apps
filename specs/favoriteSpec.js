@@ -4,7 +4,7 @@ import favoriteButtonInitiator from '../src/scripts/util/favorite_button.js';
 import database from '../src/scripts/favorite_restaurant_idb';
 
 // some time I got error because I didn't add delay each get or add favorite restaurant
-jasmine.DEFAULT_TIMEOUT_INTERVAL = 10000;
+jasmine.DEFAULT_TIMEOUT_INTERVAL = 20000;
 
 describe('Favorite restaurant', () => {
 	// toggle favorite button
