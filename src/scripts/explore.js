@@ -17,7 +17,7 @@ const explore = () => {
 				
 				<picture>
 	                <source media="(max-width: 768px)" srcset="${CONFIG.IMAGE_URL_SMALL}${pictureId}">
-					<img src="${CONFIG.IMAGE_URL_SMALL}${pictureId}" alt="${name}">
+					<img src="${CONFIG.IMAGE_URL_SMALL}${pictureId}" alt="${name}" class="lazyload">
 				</picture>
 				<div class="content">
 					<span class="rating">Rating: ${rating}</span>

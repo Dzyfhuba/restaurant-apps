@@ -13,6 +13,8 @@ import Loading from './loading';
 import RestaurantDetail from './detail/app';
 import review from './detail/review';
 import '@fortawesome/fontawesome-free/js/all.min';
+import 'lazysizes';
+import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 
 console.log('Hello Coders! :)');
 

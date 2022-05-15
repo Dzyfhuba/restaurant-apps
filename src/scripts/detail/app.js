@@ -158,7 +158,7 @@ class RestaurantDetail extends LitElement {
 	render() {
 		return html`
 	    <h1 id="title"></h1>
-		<img id="image" />
+		<img class="lazyload" id="image" />
 		<div class="restaurant-info">
 			<h3>Deskripsi</h3>
 			<p id="description"></p>

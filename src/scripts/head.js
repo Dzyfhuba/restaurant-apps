@@ -38,6 +38,7 @@ const head = () => {
 	setInterval(function () {
 		// change img src with opacity animation
 		head_img.setAttribute('src', hero_img[i % hero_img.length]);
+		head_img.classList.add('lazyload');
 		i++;
 	}, 30000);
 };

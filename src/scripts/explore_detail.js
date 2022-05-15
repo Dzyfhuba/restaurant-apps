@@ -108,9 +108,9 @@ const loadContent = (id) => {
 			structure.find('#foods').html(menu_food);
 			structure.find('#drinks').html(menu_drink);
 			if (window.innerWidth < 768) {
-				structure.find('#img-thumbnail').html(`<img src="${CONFIG.IMAGE_URL_SMALL}${img}" alt="${title}">`);
+				structure.find('#img-thumbnail').html(`<img src="${CONFIG.IMAGE_URL_SMALL}${img}" alt="${title}" class="lazyload">`);
 			} else {
-				structure.find('#img-thumbnail').html(`<img src="${CONFIG.IMAGE_URL_LARGE}${img}" alt="${title}">`);
+				structure.find('#img-thumbnail').html(`<img src="${CONFIG.IMAGE_URL_LARGE}${img}" alt="${title}" class="lazyload">`);
 			}
 			structure.find('#id').text(id);
 			structure.find('button.favorite-toggle').attr('data-id', id);

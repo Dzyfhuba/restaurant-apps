@@ -61,9 +61,9 @@ const getRestaurantDetail = (id) => {
 			structure.find('#foods').html(menu_food);
 			structure.find('#drinks').html(menu_drink);
 			if (window.innerWidth < 768) {
-				structure.find('#img-thumbnail').html(`<img src="${CONFIG.IMAGE_URL_SMALL}${img}" alt="${title}">`);
+				structure.find('#img-thumbnail').html(`<img src="${CONFIG.IMAGE_URL_SMALL}${img}" alt="${title}" class="lazyload">`);
 			} else {
-				structure.find('#img-thumbnail').html(`<img src="${CONFIG.IMAGE_URL_LARGE}${img}" alt="${title}">`);
+				structure.find('#img-thumbnail').html(`<img src="${CONFIG.IMAGE_URL_LARGE}${img}" alt="${title}" class="lazyload">`);
 			}
 			structure.find('#id').text(id);
 			structure.find('button.favorite-toggle').attr('data-id', id);
@@ -114,7 +114,7 @@ const restaurants = () => {
 				const structure = `
 				<div class="item" data-id="${item.id}">
 				<article class="card" tabindex="0">
-					<img src="${CONFIG.IMAGE_URL_SMALL}${item.pictureId}" alt="${item.name}">
+					<img class="lazyload" src="${CONFIG.IMAGE_URL_SMALL}${item.pictureId}" alt="${item.name}">
 					<div class="content">
 						<header>
 							<h1 tabindex="0">${item.name}</h1>
