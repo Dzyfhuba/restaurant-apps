@@ -18,6 +18,30 @@ section#head {
             width: 100%;
             min-width: 10px;
         }
+        picture {
+            object-fit: cover;
+            object-position: center;
+            width: inherit;
+            min-width: 1000px;
+            height: inherit;
+            position: absolute;
+            z-index: -1;
+            @include determined-screen {
+                width: 100%;
+                min-width: 0;
+            }
+            img {
+                height: inherit;
+                width: inherit;
+                object-fit: cover;
+                object-position: center;
+                min-width: 1000px;
+                @include determined-screen {
+                    width: 100%;
+                    min-width: 0;
+                }
+            }
+        }
         >.content {
             display: flex;
             flex-direction: column;
@@ -46,19 +70,6 @@ section#head {
                 color: $color-4;
                 text-shadow: 0 0 2px #000;
                 margin: 0;
-            }
-        }
-        >img {
-            object-fit: cover;
-            object-position: center;
-            width: inherit;
-            min-width: 1000px;
-            height: inherit;
-            position: absolute;
-            z-index: -1;
-            @include determined-screen {
-                width: 100%;
-                min-width: 0;
             }
         }
     }

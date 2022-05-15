@@ -60,7 +60,11 @@ const getRestaurantDetail = (id) => {
 			structure.find('#category').html(categories);
 			structure.find('#foods').html(menu_food);
 			structure.find('#drinks').html(menu_drink);
-			structure.find('#img-thumbnail').html(`<img src="${CONFIG.IMAGE_URL_LARGE}${img}" alt="${title}">`);
+			if (window.innerWidth < 768) {
+				structure.find('#img-thumbnail').html(`<img src="${CONFIG.IMAGE_URL_SMALL}${img}" alt="${title}">`);
+			} else {
+				structure.find('#img-thumbnail').html(`<img src="${CONFIG.IMAGE_URL_LARGE}${img}" alt="${title}">`);
+			}
 			structure.find('#id').text(id);
 			structure.find('button.favorite-toggle').attr('data-id', id);
 			structure.find('#review-id').val(id);

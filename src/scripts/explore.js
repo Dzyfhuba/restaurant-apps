@@ -14,7 +14,11 @@ const explore = () => {
 			<div class="wrapper">
 			<article class="card" tabindex="0">
 				<span class="city">${city}</span>
-				<img src="${CONFIG.IMAGE_URL_SMALL}${pictureId}" alt="${name}">
+				
+				<picture>
+	                <source media="(max-width: 768px)" srcset="${CONFIG.IMAGE_URL_SMALL}${pictureId}">
+					<img src="${CONFIG.IMAGE_URL_SMALL}${pictureId}" alt="${name}">
+				</picture>
 				<div class="content">
 					<span class="rating">Rating: ${rating}</span>
 					<header>

@@ -6,6 +6,7 @@
   "scripts": {
     "start-dev": "webpack serve --config webpack.dev.js --host 0.0.0.0 --port 3000",
     "build": "webpack --config webpack.prod.js",
+    "build-image": "node sharp.js",
     "lint": "eslieslint ./src",
     "test": "karma start",
     "e2e": "npx codeceptjs run --steps"
@@ -41,9 +42,11 @@
     "sass": "^1.51.0",
     "sass-loader": "^10.1.1",
     "serviceworker-webpack-plugin": "^1.0.1",
+    "sharp": "^0.30.4",
     "strip-loader": "^0.1.2",
     "style-loader": "^1.2.1",
     "webpack": "^4.46.0",
+    "webpack-bundle-analyzer": "^4.5.0",
     "webpack-cli": "^4.9.2",
     "webpack-copy": "^0.2.0",
     "webpack-dev-server": "^4.8.1",
