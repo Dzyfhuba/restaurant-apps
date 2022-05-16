@@ -1,5 +1,6 @@
 import $ from 'jquery';
 import CONFIG from './config';
+import 'lazyload';
 
 const explore = () => {
 	const list = document.querySelector('#explore .list');
@@ -14,11 +15,7 @@ const explore = () => {
 			<div class="wrapper">
 			<article class="card" tabindex="0">
 				<span class="city">${city}</span>
-				
-				<picture>
-	                <source media="(max-width: 768px)" srcset="${CONFIG.IMAGE_URL_SMALL}${pictureId}">
-					<img src="${CONFIG.IMAGE_URL_SMALL}${pictureId}" alt="${name}" class="lazyload">
-				</picture>
+				<img src="${CONFIG.IMAGE_URL_SMALL}${pictureId}" data-src="${CONFIG.IMAGE_URL_LARGE}${pictureId}" alt="${name}" class="lazyload">
 				<div class="content">
 					<span class="rating">Rating: ${rating}</span>
 					<header>
@@ -38,6 +35,7 @@ const explore = () => {
 			console.log(data);
 		}
 	});
+
 };
 
 export default explore;
